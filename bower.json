@@ -1,0 +1,17 @@
+{
+  "name": "html5-css3",
+  "version": "1.0.0",
+  "homepage": "https://github.com/shengbeiniao/html5-study",
+  "authors": [
+    "Frank.Zhang <shengbeiniao@qq.com>"
+  ],
+  "description": "nodejs,html5,css3 study",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "underscore": "~1.8.3",
+    "jquery": "~2.1.4",
+    "seajs": "~3.0.0"
+  }
+}
