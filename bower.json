@@ -1,11 +1,11 @@
 {
-  "name": "html5-css3",
+  "name": "blog",
   "version": "1.0.0",
-  "homepage": "https://github.com/shengbeiniao/html5-study",
+  "homepage": "https://github.com/shengbeiniao/blog",
   "authors": [
     "Frank.Zhang <shengbeiniao@qq.com>"
   ],
-  "description": "nodejs,html5,css3 study",
+  "description": "my blog",
   "main": "app.js",
   "license": "MIT",
   "dependencies": {
