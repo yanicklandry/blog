@@ -5,6 +5,9 @@ define(function(require,exports,module){
     var $=require('jquery');
     var _=require('underscore');
     var util=require('./util');
+    var animation=require('./animation/animation');
+
+    console.log(animation.fadein());
 
     var imgList=[];
 

@@ -36,7 +36,7 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    src: ['asserts/lib/**/*','asserts/scripts/**/*'],
+                    src: ['asserts/lib/**/*.js','asserts/scripts/**/*.js'],
                     dest: '.tmp'
                 }]
             }
@@ -49,8 +49,8 @@ module.exports = function(grunt) {
                     include: 'relative'
                 },
                 files: {
-                    '.tmp/asserts/lib.js': ['.tmp/asserts/lib/*.js'],
-                    '.tmp/asserts/main.js': ['.tmp/asserts/scripts/*.js']
+                    '.tmp/asserts/lib.js': ['.tmp/asserts/lib/**/*.js'],
+                    '.tmp/asserts/main.js': ['.tmp/asserts/scripts/**/*.js']
                 }
             }
         },

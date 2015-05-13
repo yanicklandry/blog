@@ -9,6 +9,7 @@
   "dependencies": {
     "cheerio": "^0.19.0",
     "express": "^4.12.3",
+    "markdown": "^0.5.0",
     "mongoose": "^4.0.2",
     "superagent": "^1.2.0",
     "tingodb": "^0.3.4",
