@@ -9,7 +9,7 @@ module.exports=function(app){
     });
 
     app.post('/article',function(req,res){
-        var article=new ArticleModel(req.data);
+        var article=new ArticleModel(req.body.data);
         article.save();
     })
 }

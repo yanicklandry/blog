@@ -12,6 +12,7 @@
     "bootstrap": "~3.3.4",
     "underscore": "~1.8.3",
     "jquery": "~2.1.4",
-    "seajs": "~3.0.0"
+    "seajs": "~3.0.0",
+    "marked": "~0.3.3"
   }
 }

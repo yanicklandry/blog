@@ -16,17 +16,7 @@ db.config.autoIndex=false;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
-    var UserSchema = mongoose.Schema({
-        name: String
-    });
-    UserSchema.methods.getName=function(){
-        console.log(this.name);
-    };
-
-    var User = mongoose.model('User', UserSchema);
-    var user = new User({ name: 'Tony' });
-    user.save(function(err,user){
-       console.log(user);
-    });
-    //user.getName();
+    require('./model/ArticleModel');
 });
+
+exports.mongoose=mongoose;

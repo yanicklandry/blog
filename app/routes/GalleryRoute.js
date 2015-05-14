@@ -1,7 +1,7 @@
 /**
  * Created by frank.zhang on 5/5/15.
  */
-var spider=require('../middlewares/spider');
+var spider=require('../middlewares/Spider');
 
 module.exports=function(app){
     app.get('/douban',function(req,res){

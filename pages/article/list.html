@@ -3,16 +3,38 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-</head>
-<body>
-<h1>{{title}}</h1>
+    <link type="text/css" rel="stylesheet" href="/asserts/lib/bootstrap/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="/asserts/styles/article.css">
 
-<script src="/asserts/sea.js" id="seajsnode"></script>
-<script src="/asserts/seaConfig.js"></script>
+</head>
+<body class="article">
+<div class="container">
+    <h1>{{title}}</h1>
+
+    <div class="">
+        <button id="btn-new" class="btn btn-danger">新建</button>
+        <button id="btn-save" class="pull-right btn btn-success">提交</button>
+    </div>
+
+    <form>
+        <div class="form-group">
+            <input id="title" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <textarea id="content" class="form-control"></textarea>
+        </div>
+    </form>
+
+    <div class="preview"></div>
+</div>
+
+<script src="/asserts/sea.js"></script>
+<script src="/asserts/sea-config.js"></script>
 <script src="/asserts/lib.js"></script>
 <script src="/asserts/main.js"></script>
+
 <script>
-    seajs.use('scripts/gallery');
+    seajs.use('scripts/article');
 </script>
 </body>
 </html>

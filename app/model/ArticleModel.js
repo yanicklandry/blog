@@ -1,7 +1,8 @@
 /**
  * Created by frank.zhang on 5/13/15.
  */
-var mongoose = require('mongoose');
+
+var mongoose=require('../DbConfig').mongoose;
 
 var ArticleSchema = mongoose.Schema({
     title: String,
