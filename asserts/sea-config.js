@@ -5,6 +5,7 @@ seajs.config({
     base: '/asserts',
     alias: {
         jquery: 'lib/jquery',
-        underscore:'lib/underscore'
+        underscore:'lib/underscore',
+        marked:'lib/marked'
     }
 })
