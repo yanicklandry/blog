@@ -1,11 +1,11 @@
 {
-  "name": "blog",
+  "name": "html5-css3",
   "version": "1.0.0",
-  "homepage": "https://github.com/shengbeiniao/blog",
+  "homepage": "https://github.com/shengbeiniao/html5-study",
   "authors": [
     "Frank.Zhang <shengbeiniao@qq.com>"
   ],
-  "description": "my blog",
+  "description": "nodejs,html5,css3 study",
   "main": "app.js",
   "license": "MIT",
   "dependencies": {
@@ -13,6 +13,10 @@
     "underscore": "~1.8.3",
     "jquery": "~2.1.4",
     "seajs": "~3.0.0",
-    "marked": "~0.3.3"
+    "greensock": "~1.16.1",
+    "EaselJS": "~0.8.0",
+    "TweenJS": "~0.6.0",
+    "SoundJS": "~0.6.0",
+    "PreloadJS": "~0.6.0"
   }
 }

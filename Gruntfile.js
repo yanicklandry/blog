@@ -1,12 +1,14 @@
 module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-cmd-transport');
-    grunt.loadNpmTasks('grunt-cmd-concat');
+    grunt.loadNpmTasks('grunt-usemin');
     grunt.loadNpmTasks('grunt-filerev');
 
-	grunt.initConfig({
+    grunt.initConfig({
         //执行清理
         clean: {
             build: {
@@ -22,21 +24,19 @@ module.exports = function(grunt) {
                 expand: true,
                 dot: true,
                 dest: 'dest',
-                src: ['app.js','package.json','app/**/*','pages/**/*','asserts/sea.js','asserts/seaConfig.js',
-                      'asserts/images/**/*','asserts/styles/**/*.css','!asserts/lib/**/*','!asserts/scripts/**/*']
+                src: ['app.js','package.json','app/**/*','pages/**/*','asserts/**/*','!asserts/styles/**','!asserts/scripts/**']
             }
         },
 
         transport : {
             build: {
                 options:{
-                    paths:['asserts/lib'],
                     debug:false,
                     idleading:'/'
                 },
                 files: [{
                     expand: true,
-                    src: ['asserts/lib/**/*.js','asserts/scripts/**/*.js'],
+                    src: ['asserts/scripts/**/*.js'],
                     dest: '.tmp'
                 }]
             }
@@ -45,11 +45,9 @@ module.exports = function(grunt) {
         concat: {
             build: {
                 options: {
-                    paths:['asserts/lib'],
                     include: 'relative'
                 },
                 files: {
-                    '.tmp/asserts/lib.js': ['.tmp/asserts/lib/**/*.js'],
                     '.tmp/asserts/main.js': ['.tmp/asserts/scripts/**/*.js']
                 }
             }
@@ -58,19 +56,34 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 files: {
-                    'dest/asserts/lib.js': ['.tmp/asserts/lib.js'],
                     'dest/asserts/main.js': ['.tmp/asserts/main.js']
                 }
             }
+        },
+
+        useminPrepare: {
+            build: {
+                src:['pages/layout.html'],
+                options:{
+                    dest:'dest'
+                }
+            }
+        },
+
+        usemin: {
+            html:['dest/pages/layout.html']
         }
-	});
+    });
 
 
     grunt.registerTask('default', [
         'clean',
         'copy',
+        'useminPrepare',
         'transport',
         'concat',
-        'uglify'
+        'uglify',
+        'cssmin',
+        'usemin'
     ]);
 }

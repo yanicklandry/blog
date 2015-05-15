@@ -29,6 +29,7 @@
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-cmd-concat": "^0.2.8",
     "grunt-cmd-transport": "^0.5.1",
+    "grunt-usemin": "^3.0.0",
     "grunt-filerev": "^2.0.0"
   }
 }

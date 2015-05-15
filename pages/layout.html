@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- build:css(.) /asserts/lib.css -->
+    <link type="text/css" rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- endbuild -->
+
+    <!-- build:css(.) /asserts/main.css -->
+    <link type="text/css" rel="stylesheet" href="/asserts/styles/home.css">
+    <link type="text/css" rel="stylesheet" href="/asserts/styles/gallery.css">
+    <!-- endbuild -->
+</head>
+<body>
+{% block body %}{% endblock %}
+<!-- build:js(.) /asserts/lib.js -->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/underscore/underscore.js"></script>
+<script src="/bower_components/marked/lib/marked.js"></script>
+<script src="/bower_components/EaselJS/lib/easeljs-0.8.0.combined.js"></script>
+<script src="/bower_components/TweenJS/lib/tweenjs-0.6.0.combined.js"></script>
+<script src="/bower_components/SoundJS/lib/soundjs-0.6.0.combined.js"></script>
+<script src="/bower_components/PreloadJS/lib/preloadjs-0.6.0.combined.js"></script>
+<script src="/bower_components/seajs/dist/sea-debug.js"></script>
+<!-- endbuild -->
+
+<!--SeaJS引用-->
+<script src="/asserts/main.js"></script>
+
+<!--页面内嵌JS代码-->
+{% block pagejs %}{% endblock %}
+</body>
+</html>

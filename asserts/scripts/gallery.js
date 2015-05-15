@@ -2,16 +2,13 @@
  * Created by frank.zhang on 5/5/15.
  */
 define(function(require,exports,module){
-    var $=require('jquery');
-    var _=require('underscore');
     var util=require('./util');
     var animation=require('./animation/animation');
-
     console.log(animation.fadein());
 
     var imgList=[];
 
-    $.get('/douban',function(res){
+    $.get('/gallery/douban',function(res){
         imgList=res;
         _.each(imgList,function(src){
             var $div=$('<div>');
@@ -23,7 +20,7 @@ define(function(require,exports,module){
             $img.attr('src',src);
             $img.addClass('front');
             $div.append($img);
-            $('body').append($div);
+            $('.gallery').append($div);
 
             var progress=0;
             $('img').each(function(){

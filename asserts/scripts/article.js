@@ -2,9 +2,6 @@
  * Created by frank.zhang on 5/14/15.
  */
 define(function(require,exports,module){
-    var $=require('jquery');
-    var marked=require('marked');
-
     $('#btn-new').click(function(){
         if($('#content').data('show')){
             $('#content').data('show',false).animate({
