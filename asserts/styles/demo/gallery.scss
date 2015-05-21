@@ -1,0 +1,90 @@
+@import "../../../bourbon/bourbon";
+
+@include keyframes(overturn) {
+  from{
+    @include transform(rotateY(0deg));
+  }
+  to{
+    @include transform(rotateY(180deg));
+  }
+}
+
+@include keyframes(overturn-reverse) {
+  from{
+    @include transform(rotateY(180deg));
+  }
+  to{
+    @include transform(rotateY(0deg));
+  }
+}
+
+.gallery{
+  .cover{
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+  }
+
+  .loading{
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+  }
+
+  .img-container{
+    .img-wapper{
+      position: relative;
+      width: 100px;
+      height: 100px;
+      float:left;
+      margin:5px;
+      cursor:pointer;
+      .front,.background {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #f5f5f5;
+      }
+      .front{
+        z-index: 1;
+        img{
+          width: 100%;
+          height: 100%;
+          border:0;
+        }
+      }
+      .background{
+        z-index: 2;
+        text-align: center;
+        background-color: #000000;
+        color:white;
+        @include backface-visibility(hidden);
+        .middle{
+          margin-top:20px;
+          a{
+            color:white;
+            font-weight: bold;
+            &:hover{
+              color:#e0e0e0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .animation-overturn{
+    @include animation-duration(1s);
+    @include animation-timing-function(linear);
+    @include animation-fill-mode(forwards);
+    @include animation-name(overturn);
+    &.reverse{
+//      @include animation-name(overturn-reverse);
+      @include animation-direction(reverse);
+    }
+  }
+}

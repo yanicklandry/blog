@@ -9,11 +9,12 @@
 
     <!-- build:css(.) /asserts/main.css -->
     <link type="text/css" rel="stylesheet" href="/asserts/styles/home.css">
-    <link type="text/css" rel="stylesheet" href="/asserts/styles/gallery.css">
     <!-- endbuild -->
 </head>
 <body>
-{% block body %}{% endblock %}
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
 <!-- build:js(.) /asserts/lib.js -->
 <script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/underscore/underscore.js"></script>

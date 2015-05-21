@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <base href="/">
+    <!-- build:css(.) /asserts/lib-demo.css -->
+    <link type="text/css" rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- endbuild -->
+
+    <!-- build:css(.) /asserts/main-demo.css -->
+    <link type="text/css" rel="stylesheet" href="/asserts/styles/common.css">
+    <link type="text/css" rel="stylesheet" href="/asserts/styles/demo/home.css">
+    <link type="text/css" rel="stylesheet" href="/asserts/styles/demo/gallery.css">
+    <!-- endbuild -->
+
+    <!-- build:js(.) /asserts/angular-demo.js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <!-- endbuild -->
+</head>
+<body>
+<div class="container">
+    <ui-view></ui-view>
+</div>
+<!-- build:js(.) /asserts/lib-demo.js -->
+<script src="/bower_components/underscore/underscore.js"></script>
+<script src="/bower_components/EaselJS/lib/easeljs-0.8.0.combined.js"></script>
+<script src="/bower_components/TweenJS/lib/tweenjs-0.6.0.combined.js"></script>
+<script src="/bower_components/SoundJS/lib/soundjs-0.6.0.combined.js"></script>
+<script src="/bower_components/PreloadJS/lib/preloadjs-0.6.0.combined.js"></script>
+<!-- endbuild -->
+
+<!-- build:js(.) /asserts/main-demo.js -->
+<script src="/asserts/scripts/demo/app.js"></script>
+<script src="/asserts/scripts/demo/route.js"></script>
+<script src="/asserts/scripts/demo/service.js"></script>
+<script src="/asserts/scripts/demo/directive.js"></script>
+<script src="/asserts/scripts/demo/controller/home_ctrl.js"></script>
+<script src="/asserts/scripts/demo/controller/gallery_ctrl.js"></script>
+<script src="/asserts/scripts/demo/controller/animate_ctrl.js"></script>
+<!-- endbuild -->
+
+<script src="/asserts/template-demo.js"></script>
+</body>
+</html>

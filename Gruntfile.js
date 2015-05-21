@@ -1,10 +1,13 @@
 module.exports = function(grunt) {
+    grunt.loadNpmTasks('grunt-cmd-transport');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-cmd-transport');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-html2js');
+    grunt.loadNpmTasks('grunt-ngmin');
     grunt.loadNpmTasks('grunt-usemin');
     grunt.loadNpmTasks('grunt-filerev');
 
@@ -24,7 +27,7 @@ module.exports = function(grunt) {
                 expand: true,
                 dot: true,
                 dest: 'dest',
-                src: ['app.js','package.json','app/**/*','pages/**/*','asserts/**/*','!asserts/styles/**','!asserts/scripts/**']
+                src: ['app.js','package.json','app/**/*','pages/**/*','views/**/*','asserts/**/*','!asserts/styles/**','!asserts/scripts/**']
             }
         },
 
@@ -36,7 +39,7 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    src: ['asserts/scripts/**/*.js'],
+                    src: ['asserts/scripts/front/**/*.js'],
                     dest: '.tmp'
                 }]
             }
@@ -48,7 +51,35 @@ module.exports = function(grunt) {
                     include: 'relative'
                 },
                 files: {
-                    '.tmp/asserts/main.js': ['.tmp/asserts/scripts/**/*.js']
+                    '.tmp/asserts/main.js': ['.tmp/asserts/scripts/front/**/*.js']
+                }
+            }
+        },
+
+        htmlmin: {
+            dist: {
+                options: {
+                    collapseWhitespace: true,
+                    collapseBooleanAttributes: true,
+                    removeCommentsFromCDATA: true,
+                    removeOptionalTags: true
+                },
+                files: [{
+                    expand:true,
+                    src:  'views/**/*.html',
+                    dest: '.tmp'
+                }]
+            }
+        },
+
+        html2js : {
+            build:{
+                options:{
+                    module:'app.template',
+                    base:'.tmp'
+                },
+                files:{
+                    '.tmp/concat/asserts/template-demo.js':'.tmp/views/demo/**/*.html'
                 }
             }
         },
@@ -56,14 +87,15 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 files: {
-                    'dest/asserts/main.js': ['.tmp/asserts/main.js']
+                    'dest/asserts/main.js': ['.tmp/asserts/main.js'],
+                    'dest/asserts/template-demo.js':'.tmp/concat/asserts/template-demo.js'
                 }
             }
         },
 
         useminPrepare: {
             build: {
-                src:['pages/layout.html'],
+                src:['pages/layout.html','pages/demo.html'],
                 options:{
                     dest:'dest'
                 }
@@ -71,7 +103,7 @@ module.exports = function(grunt) {
         },
 
         usemin: {
-            html:['dest/pages/layout.html']
+            html:['dest/pages/layout.html','dest/pages/demo.html']
         }
     });
 
@@ -82,6 +114,8 @@ module.exports = function(grunt) {
         'useminPrepare',
         'transport',
         'concat',
+        'htmlmin',
+        'html2js',
         'uglify',
         'cssmin',
         'usemin'

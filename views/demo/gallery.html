@@ -1,0 +1,17 @@
+<div class="gallery" ng-controller="gallery_ctrl">
+    <!--<div class="cover"></div>-->
+    <!--<div class="loading"></div>-->
+    <div class="img-container clearfix">
+        <div class="img-wapper" ng-repeat="user in userlist" ng-show="$index<=current" ng-init="reverse=false" ng-mouseenter="reverse=true" ng-mouseleave="reverse=false">
+            <div class="background animation-overturn" ng-class="{reverse:reverse}">
+                <div class="middle">
+                    <p><a ng-href="{{user.link}}">{{user.name}}</a></p>
+                    <p>{{user.district}}</p>
+                </div>
+            </div>
+            <div class="front animation-overturn" ng-class="{reverse:reverse}">
+                <img ng-src="{{user.src}}" ff-load="loading(user.src)">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,14 +1,19 @@
 {% extends "./layout.html" %}
 {% block body %}
 <div class="home">
-    <h1>{{title}}</h1>
-    <div class="cover"></div>
+    <h1>Home</h1>
+    <h2>Demo</h2>
+    <ul>
+        <li>
+            <a href="demo/gallery">Gallery</a>
+        </li>
+    </ul>
     <div class="loading"></div>
 </div>
 {% endblock %}
 
 {% block pagejs %}
 <script>
-    seajs.use('/asserts/scripts/home');
+    seajs.use('/asserts/scripts/front/home');
 </script>
 {% endblock %}
