@@ -10,6 +10,10 @@ app.config(['$locationProvider','$stateProvider','$urlRouterProvider', function 
     $stateProvider
         .state('home', {
             url: "/user",
-            templateUrl: "views/user/home.html"
+            templateUrl: "views/inner/home.html"
+        })
+        .state('article', {
+            url: "/user/article",
+            templateUrl: "views/inner/article.html"
         })
 }]);

@@ -3,11 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <!-- build:css(.) /asserts/lib.css -->
+    <!-- build:css(.) /asserts/lib-outer.css -->
     <link type="text/css" rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
     <!-- endbuild -->
 
-    <!-- build:css(.) /asserts/main.css -->
+    <!-- build:css(.) /asserts/main-outer.css -->
     <link type="text/css" rel="stylesheet" href="/asserts/styles/home.css">
     <!-- endbuild -->
 </head>
@@ -15,7 +15,7 @@
 <div class="container">
     {% block body %}{% endblock %}
 </div>
-<!-- build:js(.) /asserts/lib.js -->
+<!-- build:js(.) /asserts/lib-outer.js -->
 <script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/underscore/underscore.js"></script>
 <script src="/bower_components/marked/lib/marked.js"></script>
@@ -27,7 +27,7 @@
 <!-- endbuild -->
 
 <!--SeaJS引用-->
-<script src="/asserts/main.js"></script>
+<script src="/asserts/main-outer.js"></script>
 
 <!--页面内嵌JS代码-->
 {% block pagejs %}{% endblock %}

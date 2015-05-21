@@ -39,7 +39,7 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    src: ['asserts/scripts/sea/**/*.js'],
+                    src: ['asserts/scripts/outer/**/*.js'],
                     dest: '.tmp'
                 }]
             }
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
                     include: 'relative'
                 },
                 files: {
-                    '.tmp/asserts/main.js': ['.tmp/asserts/scripts/sea/**/*.js']
+                    '.tmp/asserts/main-outer.js': ['.tmp/asserts/scripts/outer/**/*.js']
                 }
             }
         },
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
                 },
                 files:{
                     '.tmp/concat/asserts/template-demo.js':'.tmp/views/demo/**/*.html',
-                    '.tmp/concat/asserts/template-user.js':'.tmp/views/user/**/*.html'
+                    '.tmp/concat/asserts/template-inner.js':'.tmp/views/inner/**/*.html'
                 }
             }
         },
@@ -88,9 +88,9 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 files: {
-                    'dest/asserts/main.js': '.tmp/asserts/main.js',
+                    'dest/asserts/main-outer.js': '.tmp/asserts/main-outer.js',
                     'dest/asserts/template-demo.js':'.tmp/concat/asserts/template-demo.js',
-                    'dest/asserts/template-user.js':'.tmp/concat/asserts/template-user.js'
+                    'dest/asserts/template-inner.js':'.tmp/concat/asserts/template-inner.js'
                 }
             }
         },

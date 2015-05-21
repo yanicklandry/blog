@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <title></title>
     <base href="/">
-    <!-- build:css(.) /asserts/lib-user.css -->
+    <!-- build:css(.) /asserts/lib-inner.css -->
     <link type="text/css" rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
     <!-- endbuild -->
 
-    <!-- build:css(.) /asserts/main-user.css -->
+    <!-- build:css(.) /asserts/main-inner.css -->
     <link type="text/css" rel="stylesheet" href="/asserts/styles/common.css">
-    <link type="text/css" rel="stylesheet" href="/asserts/styles/user/home.css">
-    <link type="text/css" rel="stylesheet" href="/asserts/styles/user/gallery.css">
+    <link type="text/css" rel="stylesheet" href="/asserts/styles/inner/home.css">
+    <link type="text/css" rel="stylesheet" href="/asserts/styles/inner/article.css">
     <!-- endbuild -->
 
-    <!-- build:js(.) /asserts/angular-user.js -->
+    <!-- build:js(.) /asserts/angular-inner.js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -25,24 +25,25 @@
 <div class="container">
     <ui-view></ui-view>
 </div>
-<!-- build:js(.) /asserts/lib-user.js -->
+<!-- build:js(.) /asserts/lib-inner.js -->
 <script src="/bower_components/underscore/underscore.js"></script>
+<script src="/bower_components/marked/lib/marked.js"></script>
 <script src="/bower_components/EaselJS/lib/easeljs-0.8.0.combined.js"></script>
 <script src="/bower_components/TweenJS/lib/tweenjs-0.6.0.combined.js"></script>
 <script src="/bower_components/SoundJS/lib/soundjs-0.6.0.combined.js"></script>
 <script src="/bower_components/PreloadJS/lib/preloadjs-0.6.0.combined.js"></script>
 <!-- endbuild -->
 
-<!-- build:js(.) /asserts/main-user.js -->
-<script src="/asserts/scripts/user/app.js"></script>
-<script src="/asserts/scripts/user/route.js"></script>
-<script src="/asserts/scripts/user/service.js"></script>
-<script src="/asserts/scripts/user/directive.js"></script>
-<script src="/asserts/scripts/user/controller/home_ctrl.js"></script>
-<script src="/asserts/scripts/user/controller/gallery_ctrl.js"></script>
-<script src="/asserts/scripts/user/controller/animate_ctrl.js"></script>
+<!-- build:js(.) /asserts/main-inner.js -->
+<script src="/asserts/scripts/inner/app.js"></script>
+<script src="/asserts/scripts/inner/route.js"></script>
+<script src="/asserts/scripts/inner/filter.js"></script>
+<script src="/asserts/scripts/inner/service.js"></script>
+<script src="/asserts/scripts/inner/directive.js"></script>
+<script src="/asserts/scripts/inner/controller/homeCtrl.js"></script>
+<script src="/asserts/scripts/inner/controller/articleCtrl.js"></script>
 <!-- endbuild -->
 
-<script src="/asserts/template-user.js"></script>
+<script src="/asserts/template-inner.js"></script>
 </body>
 </html>

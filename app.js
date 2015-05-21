@@ -29,7 +29,8 @@ require('./app/route/DemoRoute')(app);
 require('./app/route/UserRoute')(app);
 require('./app/route/ErrorRoute')(app);
 
-require('./app/api/GalleryCtrl')(app);
+require('./app/api/ArticleController')(app);
+require('./app/api/GalleryController')(app);
 
 app.use(function(req, res, next){
     res.render('404', { url: req.url });

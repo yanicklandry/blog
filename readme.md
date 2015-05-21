@@ -1,5 +1,7 @@
 ###项目主页
 [三直的博客](http://sanzhi.me)
+前端:bootstrap,seajs,angularjs
+后端:nodejs,expressjs,mongoose,tingodb
 
 ###前置条件
 1. 电脑已经配置了Ruby环境，Mac自带

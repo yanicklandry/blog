@@ -1,0 +1,9 @@
+<div class="article" ng-controller="articleCtrl">
+    <div>
+        <button class="btn btn-danger">新建</button>
+        <button class="btn btn-success" ng-click="save()">保存</button>
+    </div>
+    <input type="text" ng-model="title">{{title}}
+    <textarea ng-model="content"></textarea>
+    <div ng-bind-html="content|markdown"></div>
+</div>
