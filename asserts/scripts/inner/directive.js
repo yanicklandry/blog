@@ -17,3 +17,8 @@ app.directive('ffLoad', ['$parse', function($parse){
         }
     };
 }]);
+
+app.directive('zMessage',['$rootScope',function($rootScope){
+    return{
+    }
+}])

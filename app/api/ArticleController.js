@@ -7,5 +7,8 @@ module.exports=function(app){
     app.post('/api/user/article',function(req,res){
         var article=new ArticleModel(req.body.data);
         article.save();
+        res.status(200).json({
+            'msg':'添加成功！'
+        });
     })
 }

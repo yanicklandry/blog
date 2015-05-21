@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title ng-bind="global.title"></title>
     <base href="/">
     <!-- build:css(.) /asserts/lib-inner.css -->
     <link type="text/css" rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
@@ -22,7 +22,8 @@
     <!-- endbuild -->
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
+    <div class="message" ng-class="{success:global.isSuccess,warning:global.isWarn,danger:global.isError}" ng-show="global.isRtn" ng-bind="global.message"></div>
     <ui-view></ui-view>
 </div>
 <!-- build:js(.) /asserts/lib-inner.js -->
@@ -45,5 +46,11 @@
 <!-- endbuild -->
 
 <script src="/asserts/template-inner.js"></script>
+
+<script>
+    angular.element(document).ready(function(){
+        angular.bootstrap(document, ['app']);
+    })
+</script>
 </body>
 </html>
