@@ -39,7 +39,7 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    src: ['asserts/scripts/front/**/*.js'],
+                    src: ['asserts/scripts/sea/**/*.js'],
                     dest: '.tmp'
                 }]
             }
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
                     include: 'relative'
                 },
                 files: {
-                    '.tmp/asserts/main.js': ['.tmp/asserts/scripts/front/**/*.js']
+                    '.tmp/asserts/main.js': ['.tmp/asserts/scripts/sea/**/*.js']
                 }
             }
         },
@@ -79,7 +79,8 @@ module.exports = function(grunt) {
                     base:'.tmp'
                 },
                 files:{
-                    '.tmp/concat/asserts/template-demo.js':'.tmp/views/demo/**/*.html'
+                    '.tmp/concat/asserts/template-demo.js':'.tmp/views/demo/**/*.html',
+                    '.tmp/concat/asserts/template-user.js':'.tmp/views/user/**/*.html'
                 }
             }
         },
@@ -87,15 +88,16 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 files: {
-                    'dest/asserts/main.js': ['.tmp/asserts/main.js'],
-                    'dest/asserts/template-demo.js':'.tmp/concat/asserts/template-demo.js'
+                    'dest/asserts/main.js': '.tmp/asserts/main.js',
+                    'dest/asserts/template-demo.js':'.tmp/concat/asserts/template-demo.js',
+                    'dest/asserts/template-user.js':'.tmp/concat/asserts/template-user.js'
                 }
             }
         },
 
         useminPrepare: {
             build: {
-                src:['pages/layout.html','pages/demo.html'],
+                src:['pages/layout.html','pages/demo.html','pages/user.html'],
                 options:{
                     dest:'dest'
                 }
@@ -103,7 +105,7 @@ module.exports = function(grunt) {
         },
 
         usemin: {
-            html:['dest/pages/layout.html','dest/pages/demo.html']
+            html:['dest/pages/layout.html','dest/pages/demo.html','dest/pages/user.html']
         }
     });
 
