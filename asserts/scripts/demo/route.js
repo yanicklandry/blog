@@ -16,4 +16,8 @@ app.config(['$locationProvider','$stateProvider','$urlRouterProvider', function 
             url: "/demo/gallery",
             templateUrl: "views/demo/gallery.html"
         })
+        .state('box', {
+            url: "/demo/box",
+            templateUrl: "views/demo/box.html"
+        })
 }]);

@@ -1,0 +1,94 @@
+@import "bourbon/_bourbon";
+
+@include keyframes(overturn1) {
+  from{
+    @include transform(rotateY(0deg));
+  }
+  to{
+    @include transform(rotateY(-90deg));
+  }
+}
+
+@include keyframes(overturn2) {
+  from{
+    @include transform(rotateY(-360deg));
+  }
+  to{
+    @include transform(rotateY(0deg));
+  }
+}
+
+@include keyframes(overturn3) {
+  from{
+    @include transform(rotateY(180deg));
+  }
+  to{
+    @include transform(rotateY(270deg));
+  }
+}
+
+@include keyframes(overturn4) {
+  from{
+    @include transform(rotateY(270deg));
+  }
+  to{
+    @include transform(rotateY(360deg));
+  }
+}
+
+$unit:400px;
+
+.box{
+  .face-wapper{
+    position: relative;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 2*$unit;
+    height: $unit;
+    border:1px solid #000;
+    @include perspective(2*$unit);
+    .face{
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      font-size: 6em;
+      font-weight: bold;
+      line-height: $unit;
+      text-align: center;
+      @include transform-origin(100% 50%);
+      @include animation-duration(4s);
+      @include animation-timing-function(linear);
+      @include animation-fill-mode(forwards);
+      @include  animation-iteration-count(infinite);
+    }
+
+    .face1{
+      background-color:green;
+      z-index: 1;
+      @include animation-name(overturn1);
+    }
+
+    .face2{
+      background-color:blue;
+      z-index: 1;
+      @include animation-name(overturn2);
+    }
+
+    .face3{
+      background-color:gray;
+      z-index: 3;
+//      @include animation-name(overturn3);
+    }
+
+    .face4{
+      background-color:red;
+      z-index: 4;
+//      @include animation-name(overturn4);
+    }
+
+    .pause{
+       @include animation-play-state(paused);
+    }
+  }
+}
