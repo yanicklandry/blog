@@ -2,7 +2,7 @@
  * Created by frank.zhang on 5/5/15.
  */
 
-app.controller('gallery_ctrl', ['$scope','$http','$element','$interval', function ($scope,$http,$element,$interval) {
+app.controller('galleryCtrl', ['$scope','$http','$element','$interval', function ($scope,$http,$element,$interval) {
     $scope.userlist=[];
     $scope.current=0;
 
