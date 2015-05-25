@@ -20,4 +20,8 @@ app.config(['$locationProvider','$stateProvider','$urlRouterProvider', function 
             url: "/demo/box",
             templateUrl: "views/demo/box.html"
         })
+        .state('timer', {
+            url: "/demo/timer",
+            templateUrl: "views/demo/timer.html"
+        })
 }]);

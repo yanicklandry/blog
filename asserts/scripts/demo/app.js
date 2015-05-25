@@ -7,7 +7,7 @@ var app=angular.module("app",['ui.router','ui.bootstrap','app.template']);
 
 app.run(['$rootScope',function($rootScope){
     $rootScope.global={
-        title:'Angular-nodejs',
+        title:'Demo',
         currentPath:'/'
     }
     $rootScope.$on('$stateChangeSuccess',function(event,args){
