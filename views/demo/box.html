@@ -1,12 +1,13 @@
 <div class="box" ng-controller="boxCtrl">
     <div class="btn-group">
-        <button class="btn btn-default" ng-click="pause=!pause">pause/start</button>
+        <button class="btn btn-default" ng-click="run()">pause/start</button>
+        {{a}}
     </div>
     <div class="face-wapper" >
-        <div class="face face1" ng-class="{'pause':pause}">1</div>
-        <div class="face face2" ng-class="{'pause':pause}">2</div>
-        <div class="face face3" ng-class="{'pause':pause}">3</div>
-        <div class="face face4" ng-class="{'pause':pause}">4</div>
+        <div class="face face1" ng-class="{'pause':pause}" ng-style="{'z-index':a}">1</div>
+        <div class="face face2" ng-class="{'pause':pause}" ng-style="{'z-index':b}">2</div>
+        <div class="face face3" ng-class="{'pause':pause}" ng-style="{'z-index':c}">3</div>
+        <div class="face face4" ng-class="{'pause':pause}" ng-style="{'z-index':d}">4</div>
         <div class="face face5" ng-class="{'pause':pause}">5</div>
         <div class="face face6" ng-class="{'pause':pause}">6</div>
     </div>

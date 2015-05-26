@@ -24,4 +24,8 @@ app.config(['$locationProvider','$stateProvider','$urlRouterProvider', function 
             url: "/demo/timer",
             templateUrl: "views/demo/timer.html"
         })
+        .state('canvas', {
+            url: "/demo/canvas",
+            templateUrl: "views/demo/canvas.html"
+        })
 }]);

@@ -73,7 +73,7 @@
       font-weight: bold;
       line-height: 400px;
       text-align: center;
-      @include animation-duration(4s);
+      @include animation-duration(16s);
       @include animation-timing-function(linear);
       @include animation-fill-mode(forwards);
       @include  animation-iteration-count(infinite);

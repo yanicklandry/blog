@@ -1,0 +1,11 @@
+@import "bourbon/_bourbon";
+
+.canvas{
+  .canvasWapper{
+    margin-top: 100px;
+    text-align: center;
+    canvas{
+      border: 1px solid #e0e0e0;
+    }
+  }
+}
