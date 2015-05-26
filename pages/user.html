@@ -10,6 +10,7 @@
 
     <!-- build:css(.) /asserts/main-inner.css -->
     <link type="text/css" rel="stylesheet" href="/asserts/styles/common.css">
+    <link type="text/css" rel="stylesheet" href="/asserts/styles/directive.css">
     <link type="text/css" rel="stylesheet" href="/asserts/styles/inner/home.css">
     <link type="text/css" rel="stylesheet" href="/asserts/styles/inner/article.css">
     <!-- endbuild -->
@@ -36,16 +37,17 @@
 <!-- endbuild -->
 
 <!-- build:js(.) /asserts/main-inner.js -->
+<script src="/asserts/scripts/common/util.js"></script>
 <script src="/asserts/scripts/inner/app.js"></script>
 <script src="/asserts/scripts/inner/route.js"></script>
-<script src="/asserts/scripts/inner/filter.js"></script>
 <script src="/asserts/scripts/inner/service.js"></script>
-<script src="/asserts/scripts/inner/directive.js"></script>
+<script src="/asserts/scripts/common/filter.js"></script>
+<script src="/asserts/scripts/common/directive.js"></script>
 <script src="/asserts/scripts/inner/controller/homeCtrl.js"></script>
 <script src="/asserts/scripts/inner/controller/articleCtrl.js"></script>
 <!-- endbuild -->
 
-<script src="/asserts/template-inner.js"></script>
+<script src="/asserts/template.js"></script>
 
 <script>
     angular.element(document).ready(function(){

@@ -28,4 +28,8 @@ app.config(['$locationProvider','$stateProvider','$urlRouterProvider', function 
             url: "/demo/canvas",
             templateUrl: "views/demo/canvas.html"
         })
+        .state('test', {
+            url: "/demo/test",
+            templateUrl: "../../../views/demo/test.html"
+        })
 }]);

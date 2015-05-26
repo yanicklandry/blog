@@ -2,7 +2,7 @@
  * Created by frank.zhang on 5/15/15.
  */
 "use strict";
-app.directive('ffLoad', ['$parse', function($parse){
+app.directive('zLoad', ['$parse', function($parse){
     return {
         restrict: 'A',
         compile: function($element, attr) {
@@ -18,7 +18,18 @@ app.directive('ffLoad', ['$parse', function($parse){
     };
 }]);
 
-app.directive('zMessage',['$rootScope',function($rootScope){
-    return{
-    }
-}])
+app.directive('zNumberPicker', ['$parse', function($parse){
+    return {
+        restrict: 'AE',
+        templateUrl:'views/directive/numberPicker.html',
+        scope:{
+            start:'=',
+            end:'='
+        },
+        link:function(scope,element,attrs){
+            console.log(scope.start);
+            console.log(scope.end);
+        }
+    };
+}]);
+
