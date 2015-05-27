@@ -1,7 +1,17 @@
 <div class="directive">
     <div class="number-picker">
-        <div class="bar">
-            <span></span>
+        <div class="bar"  ng-mousemove="move()">
+            <span ng-mousedown="down()" ng-style="{'left':left}"></span>
         </div>
     </div>
+    <br>
+    x:{{x}}
+    <br>
+    pageX:{{pageX}}
+    <br>
+    number:{{number}}
+    <br>
+    isMove:{{isMove}}
+    <br>
+    left:{{left}}
 </div>

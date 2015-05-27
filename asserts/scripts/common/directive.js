@@ -27,8 +27,32 @@ app.directive('zNumberPicker', ['$parse', function($parse){
             end:'='
         },
         link:function(scope,element,attrs){
-            console.log(scope.start);
-            console.log(scope.end);
+            scope.isMove=false;
+            scope.left=0;
+            scope.move= function () {
+                if(scope.isMove){
+                    if(scope.left>=0&&scope.left<=200){
+                        scope.pageX=event.pageX;
+                        scope.left=event.pageX-scope.x;
+                        scope.number=Math.round(scope.left/2);
+                        console.log(scope.number);
+                    }else if(scope.left<0){
+                        scope.left=0;
+                    }else if(scope.left>200){
+                        scope.left=200;
+                    }
+                }
+            };
+
+            scope.down=function(){
+                scope.x=event.pageX-scope.left;
+                scope.isMove=true;
+            }
+
+            $('body').bind('mouseup',function(){
+                scope.isMove=false;
+                scope.$digest();
+            });
         }
     };
 }]);
