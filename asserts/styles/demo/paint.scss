@@ -5,7 +5,7 @@
   .scroll-wapper{
     margin-top: 100px;
     position: relative;
-    width: 800px;
+    width: 955px;
     height: 400px;
     .scroll{
       position: absolute;
@@ -25,7 +25,7 @@
         @include transform(translateX(-100%));
         &.roll{
           box-shadow: 5px 0px 20px black;
-          background-position: 400px;
+          background-position: -460px;
           left:0;
         }
       }
@@ -34,7 +34,7 @@
         @include transform(translateX(100%));
         box-shadow: 5px 0px 20px black;
         &.roll{
-          background-position: -400px;
+          background-position: 460px;
           right:0;
         }
       }
@@ -58,7 +58,7 @@
         }
       }
       &.roll{
-        width: 800px;
+        width: 100%;
         left:0;
       }
     }
