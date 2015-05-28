@@ -1,0 +1,8 @@
+<div class="fan" ng-controller="fanCtrl">
+    <div class="leaf-wapper">
+        <div class="leaf" ng-class="{'rotate-{{$index+1}}':isRotate}" ng-repeat="item in list" ng-click="rotate($index)">
+            <p>{{item.month}}</p>
+            <p>{{item.title}}</p>
+        </div>
+    </div>
+</div>
