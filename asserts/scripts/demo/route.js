@@ -32,6 +32,10 @@ app.config(['$locationProvider','$stateProvider','$urlRouterProvider', function 
             url: "/demo/fan",
             templateUrl: "views/demo/fan.html"
         })
+        .state('paint', {
+            url: "/demo/paint",
+            templateUrl: "views/demo/paint.html"
+        })
         .state('test', {
             url: "/demo/test",
             templateUrl: "views/demo/test.html"

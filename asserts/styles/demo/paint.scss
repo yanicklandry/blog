@@ -1,0 +1,68 @@
+@import "bourbon/_bourbon";
+
+
+.paint{
+  .scroll-wapper{
+    margin-top: 100px;
+    position: relative;
+    width: 800px;
+    height: 400px;
+    .scroll{
+      position: absolute;
+      z-index: 1000;
+      top:-30px;
+      width: 30px;
+      height: 460px;
+      background-image: url("/asserts/images/dragon-texture.jpg");
+      background-repeat: repeat-x;
+      border:1px solid #000;
+      border-radius: 10px;
+      cursor: pointer;
+      opacity: 0.7;
+      @include transition(all 1s linear);
+      &.left{
+        left:50%;
+        @include transform(translateX(-100%));
+        &.roll{
+          box-shadow: 5px 0px 20px black;
+          background-position: 400px;
+          left:0;
+        }
+      }
+      &.right{
+        right:50%;
+        @include transform(translateX(100%));
+        box-shadow: 5px 0px 20px black;
+        &.roll{
+          background-position: -400px;
+          right:0;
+        }
+      }
+    }
+
+
+    .image-wapper{
+      position: relative;
+      width: 0;
+      overflow: hidden;
+      left:50%;
+      @include transition(all 1s linear);
+      img{
+        left:50%;
+        @include transform(translateX(-50%));
+        height: 400px;
+        @include transition(all 1s linear);
+        &.roll{
+          left:0%;
+          @include transform(translateX(0));
+        }
+      }
+      &.roll{
+        width: 800px;
+        left:0;
+      }
+    }
+  }
+}
+
+
