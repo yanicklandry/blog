@@ -5,7 +5,7 @@
   .scroll-wapper{
     margin-top: 100px;
     position: relative;
-    width: 955px;
+    width: 954px;
     height: 400px;
     .scroll{
       position: absolute;
@@ -20,46 +20,97 @@
       cursor: pointer;
       opacity: 0.7;
       @include transition(all 1s linear);
-      &.left{
-        left:50%;
-        @include transform(translateX(-100%));
-        &.roll{
+      &.bothway{
+        &.left{
+          left:50%;
+          @include transform(translateX(-100%));
+          &.roll{
+            box-shadow: 5px 0px 20px black;
+            background-position: -460px;
+            left:0;
+          }
+        }
+        &.right{
+          right:50%;
+          @include transform(translateX(100%));
           box-shadow: 5px 0px 20px black;
-          background-position: -460px;
-          left:0;
+          &.roll{
+            background-position: 460px;
+            right:0;
+          }
         }
       }
-      &.right{
-        right:50%;
-        @include transform(translateX(100%));
-        box-shadow: 5px 0px 20px black;
-        &.roll{
-          background-position: 460px;
+      &.oneway-left{
+        &.left{
+          left:0;
+          @include transform(translateX(-100%));
+          &.roll{
+            box-shadow: 5px 0px 20px black;
+          }
+        }
+        &.right{
+          left:0;
+          box-shadow: 5px 0px 20px black;
+          &.roll{
+            background-position: 460px;
+            left:100%;
+          }
+        }
+      }
+      &.oneway-right{
+        &.left{
           right:0;
+          &.roll{
+            box-shadow: 5px 0px 20px black;
+            background-position: -460px;
+            right:100%;
+          }
+        }
+        &.right{
+          right:0;
+          @include transform(translateX(100%));
+          box-shadow: 5px 0px 20px black;
+          &.roll{
+          }
         }
       }
     }
 
 
     .image-wapper{
-      position: relative;
+      position: absolute;
       width: 0;
       overflow: hidden;
-      left:50%;
-      @include transition(all 1s linear);
       img{
-        left:50%;
-        @include transform(translateX(-50%));
         height: 400px;
+      }
+      &.bothway{
+        left:50%;
         @include transition(all 1s linear);
+        img{
+          @include transform(translateX(-50%));
+          @include transition(all 1s linear);
+          &.roll{
+            @include transform(translateX(0));
+          }
+        }
         &.roll{
-          left:0%;
-          @include transform(translateX(0));
+          width: 100%;
+          left:0;
         }
       }
-      &.roll{
-        width: 100%;
-        left:0;
+      &.oneway-left{
+        @include transition(all 1s linear);
+        &.roll{
+          width: 100%;
+        }
+      }
+      &.oneway-right{
+        right: 0;
+        @include transition(all 1s linear);
+        &.roll{
+          width: 100%;
+        }
       }
     }
   }

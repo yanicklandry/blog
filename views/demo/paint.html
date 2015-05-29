@@ -1,12 +1,17 @@
 <div class="paint" ng-controller="paintCtrl">
+    <div class="btn-group" ng-init="way=1">
+        <button class="btn btn-default" ng-click="way=1;isRoll=false">bothway</button>
+        <button class="btn btn-default" ng-click="way=2;isRoll=false">left</button>
+        <button class="btn btn-default" ng-click="way=3;isRoll=false">right</button>
+    </div>
     <div class="scroll-wapper">
-        <div class="scroll left" ng-class="{'roll':isRoll}" ng-click="isRoll=!isRoll">
+        <div class="scroll left" ng-class="{'roll':isRoll,'bothway':way==1,'oneway-left':way==2,'oneway-right':way==3}" ng-click="isRoll=!isRoll">
         </div>
-        <div class="scroll right" ng-class="{'roll':isRoll}" ng-click="isRoll=!isRoll">
+        <div class="scroll right" ng-class="{'roll':isRoll,'bothway':way==1,'oneway-left':way==2,'oneway-right':way==3}" ng-click="isRoll=!isRoll">
         </div>
 
-        <div class="image-wapper" ng-class="{'roll':isRoll}">
-            <img src="/asserts/images/paint1.jpg"  ng-class="{'roll':isRoll}">
+        <div class="image-wapper" ng-class="{'roll':isRoll,'bothway':way==1,'oneway-left':way==2,'oneway-right':way==3}">
+            <img src="/asserts/images/paint1.jpg"  ng-class="{'roll':isRoll,'oneway-left':way==2,'oneway-right':way==3}">
         </div>
     </div>
 </div>
