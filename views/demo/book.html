@@ -1,0 +1,7 @@
+<div class="book" ng-controller="bookCtrl" ng-class="{'turn-left':isTurnLeft,'turn-right':isTurnRight}">
+    <div class="backbone"></div>
+    <div class="page cover"  ng-click="turnRight()">{{book[current-1].content}}<span>{{book[current-1].pageNum}}</span></div>
+    <div class="page front" ng-class="{'turn':isTurn}" ng-click="turnLeft()">{{book[current].content}}<span>{{book[current].pageNum}}</span></div>
+    <div class="page back" ng-class="{'turn':isTurn}"  ng-click="turnRight()">{{book[current+1].content}}<span>{{book[current+1].pageNum}}</span></div>
+    <div class="page back-cover"  ng-click="turnLeft()">{{book[current+2].content}}<span>{{book[current+2].pageNum}}</span></div>
+</div>

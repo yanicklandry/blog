@@ -1,0 +1,100 @@
+@import "bourbon/_bourbon";
+
+
+.book{
+  position: relative;
+  margin-top: 100px;
+  height: 600px;
+  @include perspective(2000px);
+
+  .current{
+    position: absolute;
+    left:200px;
+    top:0;
+    z-index: 100;
+    font-size: 5em;
+    color: #000000;
+  }
+
+
+  .page,.backbone{
+    position: absolute;
+    height: 100%;
+  }
+
+  .page{
+    width: 45%;
+    font-size: 5em;
+    line-height: 600px;
+    text-align: center;
+    cursor: pointer;
+    color:white;
+    background-color: #000000;
+    @include backface-visibility(hidden);
+    span{
+    }
+  }
+
+  &.turn-left{
+    .front{
+      right: 0;
+      @include transform-origin(-11.1111% 50%);
+      z-index: 1;
+      &.turn{
+        @include transform(rotateY(-180deg));
+        @include transition(all 1s linear);
+      }
+    }
+    .back{
+      left:0;
+      @include transform(rotateY(180deg));
+      @include transform-origin(111.1111% 50%);
+      z-index: 0;
+      &.turn{
+        @include transform(rotateY(0deg));
+        @include transition(all 1s linear);
+      }
+    }
+  }
+
+  &.turn-right{
+    .front{
+      right: 0;
+      @include transform(rotateY(-180deg));
+      @include transform-origin(-11.1111% 50%);
+      z-index: 0;
+      &.turn{
+        @include transform(rotateY(0deg));
+        @include transition(all 1s linear);
+      }
+    }
+    .back{
+      left:0;
+      @include transform-origin(111.1111% 50%);
+      z-index: 1;
+      &.turn{
+        @include transform(rotateY(180deg));
+        @include transition(all 1s linear);
+      }
+    }
+  }
+
+  .cover{
+    left: 0;
+    z-index: -1;
+  }
+
+  .back-cover{
+    right: 0;
+    z-index: -1;
+  }
+
+  .backbone{
+    width: 10%;
+    left:50%;
+    @include transform(translateX(-50%));
+    background-color: #f5f5f5;
+    border:2px solid #000;
+  }
+}
+

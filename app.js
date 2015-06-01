@@ -38,6 +38,8 @@ app.use(function(req, res, next){
     return;
 });
 
-app.listen(3001,function(){
-    console.log('server start at 3001!');
+var port=process.argv[2]?process.argv[2]:80;
+
+app.listen(port,function(){
+    console.log('server start at '+port+'!');
 });
