@@ -2,7 +2,7 @@
  * Created by frank.zhang on 5/5/15.
  */
 app.controller('bookCtrl', ['$scope','$timeout', function ($scope,$timeout) {
-    $scope.current=1;
+    $scope.current=0;
     $scope.isTurnLeft=true;
     $scope.isTurnRight=false;
 
@@ -34,22 +34,60 @@ app.controller('bookCtrl', ['$scope','$timeout', function ($scope,$timeout) {
 
 
     $scope.turnLeft=function(){
-        $scope.isTurnLeft=true;
-        $scope.isTurnRight=false;
-        $scope.isTurn=true;
-        $timeout(function(){
-            $scope.current+=2;
-            $scope.isTurn=false;
-        },1000);
+        if($scope.current<=($scope.book.length-4)){
+            $scope.isTurnLeft=true;
+            $scope.isTurnRight=false;
+            $timeout(function(){
+                $scope.isTurn=true;
+            },100);
+            $timeout(function(){
+                $scope.current+=2;
+                $scope.isTurn=false;
+            },1100);
+        }
     }
 
     $scope.turnRight=function(){
-        $scope.isTurnLeft=false;
-        $scope.isTurnRight=true;
-        $scope.isTurn=true;
-        $timeout(function(){
-            $scope.current-=2;
-            $scope.isTurn=false;
-        },1000);
+        if($scope.current>=0){
+            $scope.isTurnLeft=false;
+            $scope.isTurnRight=true;
+            $timeout(function(){
+                $scope.isTurn=true;
+            },100);
+            $timeout(function(){
+                $scope.current-=2;
+                $scope.isTurn=false;
+            },1100);
+        }
+    }
+
+    $scope.backClick=function(){
+        if($scope.current<=($scope.book.length-4)){
+            $scope.isTurnLeft=true;
+            $scope.isTurnRight=false;
+            $scope.current+=2;
+            $timeout(function(){
+                $scope.isTurn=true;
+            },100);
+            $timeout(function(){
+                $scope.current+=2;
+                $scope.isTurn=false;
+            },1100);
+        }
+    }
+
+    $scope.coverClick=function(){
+        if($scope.current>=0) {
+            $scope.isTurnLeft = false;
+            $scope.isTurnRight = true;
+            $scope.current -= 2;
+            $timeout(function () {
+                $scope.isTurn = true;
+            }, 100);
+            $timeout(function () {
+                $scope.current -= 2;
+                $scope.isTurn = false;
+            }, 1100);
+        }
     }
 }]);
