@@ -3,7 +3,9 @@
  */
 "use strict";
 app.config(['$locationProvider','$stateProvider','$urlRouterProvider', function ($locationProvider,$stateProvider, $urlRouterProvider) {
-    $locationProvider.html5Mode(true);
+    if(window.history&&history.pushState){
+        $locationProvider.html5Mode(true);
+    }
 
     $urlRouterProvider.otherwise("/demo");
 
@@ -39,6 +41,10 @@ app.config(['$locationProvider','$stateProvider','$urlRouterProvider', function 
         .state('book', {
             url: "/demo/book",
             templateUrl: "views/demo/book.html"
+        })
+        .state('cycle', {
+            url: "/demo/cycle",
+            templateUrl: "views/demo/cycle.html"
         })
         .state('test', {
             url: "/demo/test",

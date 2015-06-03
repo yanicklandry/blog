@@ -1,0 +1,43 @@
+/**
+ * Created by frank.zhang on 5/5/15.
+ */
+app.controller('cycleCtrl', ['$scope','$timeout', function ($scope,$timeout) {
+    $scope.list=[
+        {
+            'src':'/asserts/images/month/1.jpg'
+        },
+        {
+            'src':'/asserts/images/month/2.jpg'
+        },
+        {
+            'src':'/asserts/images/month/3.jpg'
+        },
+        {
+            'src':'/asserts/images/month/4.jpg'
+        },
+        {
+            'src':'/asserts/images/month/5.jpg'
+        },
+        {
+            'src':'/asserts/images/month/6.jpg'
+        },
+        {
+            'src':'/asserts/images/month/7.jpg'
+        },
+        {
+            'src':'/asserts/images/month/8.jpg'
+        },
+        {
+            'src':'/asserts/images/month/9.jpg'
+        },
+        {
+            'src':'/asserts/images/month/10.jpg'
+        },
+        {
+            'src':'/asserts/images/month/11.jpg'
+        },
+        {
+            'src':'/asserts/images/month/12.jpg'
+        }
+    ];
+}]);

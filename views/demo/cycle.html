@@ -1,0 +1,7 @@
+<div class="cycle" ng-controller="cycleCtrl">
+    <div class="window">
+        <div class="img-wapper">
+            <img ng-repeat="img in list" class="rotate-{{$index}}" ng-src="{{img.src}}">
+        </div>
+    </div>
+</div>
