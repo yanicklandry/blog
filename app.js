@@ -39,6 +39,7 @@ app.use(function(req, res, next){
     return;
 });
 
+//监听端口
 var port=process.argv[2]?process.argv[2]:80;
 
 app.listen(port,function(){
