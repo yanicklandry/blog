@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "homepage": "https://github.com/shengbeiniao/blog",
   "description": "A Blog website use nodejs,html5,css3",
+  "private": true,
   "main": "app.js",
   "author": "Frank.Zhang",
   "license": "ISC",
